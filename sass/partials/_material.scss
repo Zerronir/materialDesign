@@ -1,0 +1,70 @@
+@use "@material/icon-button";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/tab/mdc-tab";
+@use "@material/tab-bar/mdc-tab-bar";
+@use "@material/tab-scroller/mdc-tab-scroller";
+@use "@material/tab-indicator/mdc-tab-indicator";
+@use "@material/card";
+@use "@material/layout-grid/mdc-layout-grid";
+@use "@material/button";
+
+@include button.core-styles;
+@include icon-button.core-styles;
+@include card.core-styles;
+
+$blue:      #506f8e;
+$purple:    #aea4ad;
+$beige:     #d9d0cb;
+$tan:       #eee4da;
+$white:     #ffffff;
+$blue-dark: darken($blue, 10);
+
+$base-font-family: 'Didact Gothic', sans-serif;
+$logo-font-family: 'Ribeye Marrow', cursive;
+
+$page-width:     1200px;
+$kitten-width:   $page-width / 4;
+$location-width: 33%;
+$info-width:     33%;
+
+$border-width:  10px;
+$border-radius: 20px;
+
+.mdc-top-app-bar {
+  background-color: $purple;
+  padding: 1em;
+  position: inherit !important;
+}
+
+.mdc-top-app-bar__section {
+  background-color: $purple;
+  height: auto;
+}
+
+.mdc-tab, .mdc-tab__content {
+  background-color: $purple;
+}
+
+.mdc-top-app-bar__title {
+  background-color: $purple;
+  color: $blue;
+  font-family: $logo-font-family;
+  font-size: 3em;
+  margin: .25em 0;
+  text-shadow: 1px 1px 0px $beige;
+}
+
+.mdc-tab__text-label {
+  color: $beige;
+}
+
+.mdc-tab-indicator, .mdc-tab-indicator--active {
+  color: white;
+}
+
+
+.my-card {
+  padding: 16px;
+  height: 350px;
+  width: 350px;
+}

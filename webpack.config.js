@@ -1,0 +1,67 @@
+const webpack = require("webpack");
+const path = require('path');
+
+module.exports = [{
+    entry: {
+        styles: ['./sass/app.scss'],
+        material: ['./js/material.js'],
+        vendor: [
+            './js/application.js',
+            './js/jquery-2.1.0.min.js',
+            './js/modernizr-2.5.2.min.js'
+        ]
+    },
+    output: {
+        // This is necessary for webpack to compile
+        // But we never use style-bundle.js
+        filename: '[name].bundle.js',
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: './js/jquery-2.1.0.min.js'
+        }),
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].bundle.css',
+                        },
+                    },
+                    { loader: 'extract-loader' },
+                    { loader: 'css-loader' },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            // Prefer Dart Sass
+                            implementation: require('sass'),
+
+                            // See https://github.com/webpack-contrib/sass-loader/issues/804
+                            webpackImporter: false,
+                            sassOptions: {
+                                includePaths: ['./node_modules']
+                            },
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+                exclude: '/node_modules/'
+            }
+        ]
+    },
+    externals: {
+        jquery: 'jQuery'
+    }
+}];
