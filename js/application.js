@@ -1,22 +1,24 @@
-var names = ['Tiger', 'Samuel', 'Leeloo',
-             'Bella', 'Mo', 'Sly',
-             'Beezy', 'Maple', 'Rodney',
-             'Yonce', 'Reginald', 'Winifred'];
+import $ from './jquery-2.1.0.min';
 
-var ages  = ['9 Weeks', '12 Weeks', '3 Months',
-             '8 Weeks', '1 Year', '15 Weeks',
-             '4 Months', '2 Months', '14 Weeks',
-             '6 Months', '10 Weeks', '8 Months'];
+const names = ['Tiger', 'Samuel', 'Leeloo',
+    'Bella', 'Mo', 'Sly',
+    'Beezy', 'Maple', 'Rodney',
+    'Yonce', 'Reginald', 'Winifred'];
 
-$('.kittens').find('li').each( function(i, el) {
-  var img = $(el).find('img');
-  var name = $(el).find('.name');
-  var age = $(el).find('.age');
+const ages  = ['9 Weeks', '12 Weeks', '3 Months',
+    '8 Weeks', '1 Year', '15 Weeks',
+    '4 Months', '2 Months', '14 Weeks',
+    '6 Months', '10 Weeks', '8 Months'];
 
-  var w = 250;
-  var h = 250;
+$('.mdc-card').find('.kittens').each( function(i, el) {
+    let img = $(el).find('img');
+    let name = $(el).find('.name');
+    let age = $(el).find('.age');
 
-  img.attr('src', 'http://placekitten.com/'+w+'/'+h+'?image='+i);
-  name.text(names[i]);
-  age.text(ages[i]);
+    let w = 350;
+    let h = 350;
+
+    img.attr('src', 'http://placekitten.com/'+w+'/'+h+'?image='+i);
+    name.text(names[i]);
+    age.text(ages[i]);
 });

@@ -5,11 +5,7 @@ module.exports = [{
     entry: {
         styles: ['./sass/app.scss'],
         material: ['./js/material.js'],
-        vendor: [
-            './js/application.js',
-            './js/jquery-2.1.0.min.js',
-            './js/modernizr-2.5.2.min.js'
-        ]
+        app: './js/application.js',
     },
     output: {
         // This is necessary for webpack to compile
