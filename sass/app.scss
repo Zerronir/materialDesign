@@ -31,6 +31,8 @@ $info-width:     33%;
 $border-width:  10px;
 $border-radius: 20px;
 
+$default: 16px;
+
 * {
   margin: 0;
   padding: 0;
@@ -39,6 +41,10 @@ $border-radius: 20px;
 
 body {
   background-color: $tan;
+}
+
+.mdc-layout-grid__inner {
+  grid-template-columns: repeat(16, minmax(0, 1fr));
 }
 
 .mdc-top-app-bar {
@@ -62,6 +68,10 @@ body {
 
 .mdc-tab__ripple::before, .mdc-tab__ripple::after {
   background-color: $white !important;
+}
+
+.mdc-button {
+  margin: $default;
 }
 
 .mdc-button__ripple::before, .mdc-button__ripple::after {
@@ -94,7 +104,12 @@ body {
 }
 
 .my-card {
+  margin: $default;
   padding: 0;
   height: 500px;
   width: 350px;
+}
+
+.card-label {
+  padding: $default;
 }
