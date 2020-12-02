@@ -7,6 +7,7 @@
 @use "@material/card";
 @use "@material/layout-grid/mdc-layout-grid";
 @use "@material/button";
+@use "@material/typography/mdc-typography";
 
 @include button.core-styles;
 @include icon-button.core-styles;
@@ -61,6 +62,14 @@ body {
 
 .mdc-tab__ripple::before, .mdc-tab__ripple::after {
   background-color: $white !important;
+}
+
+.mdc-button__ripple::before, .mdc-button__ripple::after {
+  color: $purple !important;
+}
+
+.mdc-button:not(:disabled){
+  color: $purple !important;
 }
 
 .mdc-top-app-bar__title {
